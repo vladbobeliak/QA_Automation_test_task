@@ -1,5 +1,4 @@
 const CREDETIALS = Cypress.env("credetials");
-const ENV = Cypress.env()
 
 class LogInPage {
     getUsernameField() {
@@ -44,7 +43,7 @@ class LogInPage {
     }
 
     visit() {
-        cy.visit(ENV.url + '/qa-portal/greet.php');
+        cy.visit(Cypress.env('login_url'));
     }
 
     verifyElements(element) {
@@ -56,7 +55,7 @@ class LogInPage {
     loginSuccessRequest() {
         cy.request({
             method: 'POST',
-            url: ENV.url + '/qa-portal/registerlogin/registerlogin.php',
+            url: Cypress.env('post_form_url'),
             form: true,
             body: {
                 username: CREDETIALS.correctUsername,
