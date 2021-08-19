@@ -53,21 +53,6 @@ class LogInPage {
             .and('be.visible');
     }
 
-    setUsername(value) {
-        this.getUsernameField()
-            .type(value);
-    }
-
-    setPassword(value) {
-        this.getPasswordField()
-            .type(value);
-    }
-
-    setLogIn() {
-       this.getLoginButton()
-            .click();
-    }
-
     loginSuccessRequest() {
         cy.request({
             method: 'POST',
