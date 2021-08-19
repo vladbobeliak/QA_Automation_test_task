@@ -1,3 +1,13 @@
 {
-  
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": false,
+    "html": true,
+    "json": true
+  }, 
+  "screenshotsFolder": "cypress/results/screenshots",
+  "screenshotOnRunFailure": true,
+  "videosFolder": "cypress/results/videos",
+  "video": true
 }
