@@ -1,9 +1,5 @@
 {
     "env": {
-      "url": "https://www.pecodesoftware.com",
-      "incorrectUsername": "username",
-      "incorrectPassword": "password",
-      "correctUsername": "correctUsername",
-      "correctPassword": "correctPassword"
+      "url": "https://www.pecodesoftware.com"
     }
 }

@@ -1,21 +1,42 @@
-
+const CREDETIALS = Cypress.env("credetials");
 const ENV = Cypress.env()
+
 class LogInPage {
     getUsernameField() {
         return cy.get('input[name="username"')
     }
+
     getPasswordField() {
         return cy.get('input[name="password"]')
     }
+
     getLoginButton() {
         return cy.get('.btn.btn-success')
     }
+
     getErrorDueToUsername() {
         return cy.get(':nth-child(1) > .help-block')
     }
+
     getErrorDueToPassword() {
         return cy.get(':nth-child(2) > .help-block')
     }
+
+    setUsername(value) {
+        this.getUsernameField()
+            .type(value);
+    }
+
+    setPassword(value) {
+        this.getPasswordField()
+            .type(value);
+    }
+
+    setLogIn() {
+       this.getLoginButton()
+            .click();
+    }
+
     verifyError(error, text) {
         error
             .contains(text)
@@ -32,17 +53,17 @@ class LogInPage {
             .and('be.visible');
     }
 
-    fillUsername(value) {
+    setUsername(value) {
         this.getUsernameField()
             .type(value);
     }
 
-    fillPassword(value) {
+    setPassword(value) {
         this.getPasswordField()
             .type(value);
     }
 
-    logIn() {
+    setLogIn() {
        this.getLoginButton()
             .click();
     }
@@ -53,8 +74,8 @@ class LogInPage {
             url: ENV.url + '/qa-portal/registerlogin/registerlogin.php',
             form: true,
             body: {
-                username: ENV.correctUsername,
-                password: ENV.correctPassword,
+                username: CREDETIALS.correctUsername,
+                password: CREDETIALS.correctPassword,
             },
             }).then(
                 (response) => {
