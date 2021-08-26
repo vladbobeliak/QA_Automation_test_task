@@ -1,5 +1,5 @@
 import LogInPage from '../pageObject/loginPage';
-const CREDETIALS = Cypress.env("credetials")
+const CREDETIALS = Cypress.env("credetials");
 const logInPage = new LogInPage();
 
 describe("QA Automation test task", () => {
@@ -27,20 +27,20 @@ describe("QA Automation test task", () => {
     })
 
     it("Verify that all the error messages appear (with empty field “Password”)", () => {
-        logInPage.setUsername(CREDETIALS.incorrectUsername)
+        logInPage.setUsername(CREDETIALS.incorrectUsername);
         logInPage.setLogIn();
         logInPage.verifyError(logInPage.getErrorDueToPassword(), "Please enter your password.");
     })
 
     it("Verify that all the error messages appear (with empty field “Username”)", () => {
-        logInPage.setPassword(CREDETIALS.incorrectPassword)
+        logInPage.setPassword(CREDETIALS.incorrectPassword);
         logInPage.setLogIn();
         logInPage.verifyError(logInPage.getErrorDueToUsername(), "Please enter username.");
     })
 
     it("Verify that all the error messages appear (When all fields are filled with incorrect values)", () => {
-        logInPage.setUsername(CREDETIALS.incorrectUsername)
-        logInPage.setPassword(CREDETIALS.incorrectPassword)
+        logInPage.setUsername(CREDETIALS.incorrectUsername);
+        logInPage.setPassword(CREDETIALS.incorrectPassword);
         logInPage.setLogIn();
         logInPage.verifyError(logInPage.getErrorDueToUsername(), "No account found with that username.");
     })
