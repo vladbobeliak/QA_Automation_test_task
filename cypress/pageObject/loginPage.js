@@ -2,23 +2,23 @@ const CREDETIALS = Cypress.env("credetials");
 
 class LogInPage {
     getUsernameField() {
-        return cy.get('input[name="username"')
+        return cy.get('input[name="username"');
     }
 
     getPasswordField() {
-        return cy.get('input[name="password"]')
+        return cy.get('input[name="password"]');
     }
 
     getLoginButton() {
-        return cy.get('.btn.btn-success')
+        return cy.get('.btn.btn-success');
     }
 
     getErrorDueToUsername() {
-        return cy.get(':nth-child(1) > .help-block')
+        return cy.get(':nth-child(1) > .help-block');
     }
 
     getErrorDueToPassword() {
-        return cy.get(':nth-child(2) > .help-block')
+        return cy.get(':nth-child(2) > .help-block');
     }
 
     setUsername(value) {
